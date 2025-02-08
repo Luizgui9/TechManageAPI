@@ -34,3 +34,4 @@ build/
 
 ### Banco de dados H2 ###
 database/h2_persistence_dbFile.mv.db
+h2_persistence_dbFile.trace.db
