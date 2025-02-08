@@ -34,14 +34,14 @@ public class UserService implements IUserService
 	public User getUserById(Long id) 
 	{
 		return userRepository.findById(id)
-				.orElseThrow(() -> new EntityNotFoundException("Usuário com ID " + id + " não encontrado"));
+				.orElseThrow(() -> new EntityNotFoundException("Usuário com ID '" + id + "' não encontrado"));
 	}
 
 	@Override
 	public User getUserByEmail(String email) 
 	{
 		return userRepository.findByEmail(email)
-				.orElseThrow(() -> new EntityNotFoundException("Usuário com e-mail " + email + " não encontrado"));
+				.orElseThrow(() -> new EntityNotFoundException("Usuário com e-mail '" + email + "' não encontrado"));
 	}
 
 	@Override
