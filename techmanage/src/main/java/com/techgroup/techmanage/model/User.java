@@ -17,6 +17,7 @@ public class User
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
 	
+    @Size(max = 255, message = "O campo nome completo não pode ter mais de 255 caracteres.")
 	@NotBlank(message = "O campo nome completo é de preenchimento obrigatório")
 	private String fullName;
 	

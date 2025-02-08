@@ -3,7 +3,9 @@ package com.techgroup.techmanage.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.techgroup.techmanage.model.User;
 import com.techgroup.techmanage.repository.IUserRepository;
@@ -27,7 +29,12 @@ public class UserService implements IUserService
 	@Override
 	public List<User> getAllUsers() 
 	{
-		return userRepository.findAll();
+		List<User> userList = userRepository.findAll();
+		
+		if(userList.isEmpty())
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nenhum usuário encontrado.");
+		
+		return userList;
 	}
 
 	@Override

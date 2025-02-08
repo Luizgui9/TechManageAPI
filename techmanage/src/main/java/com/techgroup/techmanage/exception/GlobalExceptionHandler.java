@@ -11,6 +11,7 @@ import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
@@ -94,5 +95,11 @@ public class GlobalExceptionHandler
 		String paramName = ex.getName();
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST)
 				.body("Formato inválido para o campo '" + paramName + "'. O campo deve estar preenchido com um número inteiro.");
+	}
+	
+	@ExceptionHandler(ResponseStatusException.class)
+	public ResponseEntity<Object> handleResponseStatusException(ResponseStatusException ex)
+	{
+		return new ResponseEntity<>(ex.getReason(), ex.getStatusCode());
 	}
 }
