@@ -175,9 +175,9 @@ Exemplo de Requisição cURL: ``curl --location --request DELETE 'localhost:8080
 # TESTES UNITARIOS E INTEGRADOS
 O projeto possui testes unitários para os serviços e testes de integração para os endpoints.  
 As classes de testes ficam no caminho ``src/test/java``, dentro dos respectivos pacotes:  
-``com.techgroup.techmanage`` 
-``com.techgroup.techmanage.controller``
-``com.techgroup.techmanage.service``
+``com.techgroup.techmanage``   
+``com.techgroup.techmanage.controller``  
+``com.techgroup.techmanage.service``  
 
 #### Como executar os testes:
 1. Dentro do pacote ``com.techgroup.techmanage``, localizar classe ``TechmanageApplicationTests.java``
@@ -189,9 +189,9 @@ As classes de testes ficam no caminho ``src/test/java``, dentro dos respectivos 
 ---   
 
 # Considerações Finais
-### Validações de campos de entrada:
-**fullName:** Campo de preenchimento obrigatório, máximo de 255 caracteres.  
-**email:** Deve estar em formato válido (ex.: fulano@email), campo tem preenchimento obrigatório e unico (não é possível criar um usuário com um email já cadastrado no banco de dados).
-**phone:** Deve seguir o formato internacional: +XX XX XXXXX-XXXX.
-**birthDate:** Deve ser uma data no passado e data deve seguir padrão localDate (yyyy-MM-dd).
-**userType:** Enum com valores possíveis: ADMIN, EDITOR, VIEWER.
+### Validações de campos de entrada:  
+- **fullName:** Campo de preenchimento obrigatório, máximo de 255 caracteres.    
+- **email:** Deve estar em formato válido (ex.: fulano@email), campo tem preenchimento obrigatório e unico (não é possível criar um usuário com um email já cadastrado no banco de dados).  
+- **phone:** Deve seguir o formato internacional: +XX XX XXXXX-XXXX.  
+- **birthDate:** Deve ser uma data no passado e data deve seguir padrão localDate (yyyy-MM-dd).  
+- **userType:** Enum com valores possíveis: ADMIN, EDITOR, VIEWER.  
