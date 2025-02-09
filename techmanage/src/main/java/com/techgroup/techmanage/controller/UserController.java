@@ -1,10 +1,12 @@
 package com.techgroup.techmanage.controller;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.techgroup.techmanage.api.IUserAPI;
 import com.techgroup.techmanage.model.User;
@@ -20,7 +22,12 @@ public class UserController implements IUserAPI
 	@Override
 	public ResponseEntity<User> createUser (@RequestBody User user)
 	{
-		return ResponseEntity.ok(userService.createUser(user));
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+	            .path("/{id}")
+	            .buildAndExpand(user.getUserId())
+	            .toUri();
+		
+		return ResponseEntity.created(location).body(userService.createUser(user));
 	}
 	
 	@Override
