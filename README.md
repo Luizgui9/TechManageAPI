@@ -180,11 +180,10 @@ As classes de testes ficam no caminho ``src/test/java``, dentro dos respectivos 
 ``com.techgroup.techmanage.service``  
 
 #### Como executar os testes:
-1. Dentro do pacote ``com.techgroup.techmanage``, localizar classe ``TechmanageApplicationTests.java``
-   e executa um **Run JUnit Test**.
-
-> [!NOTE]
-> Executar **Run JUnit Test** na classe ``TechmanageApplicationTests.java`` fará com que seja executado e testado o carregamento de contexto do Springboot, e sequencialmente, todas as classes de testes serão executadas também. Caso queira executar individualmente as classes ``UserControllerTest.java`` ou ``UserServiceTest.java``, basta seguir os passos descritos acima, porém executando a classe desejada presente dentro de outro pacote do caminho ``src/test/java``.
+1. Para teste geral, localizar caminho ``src/test/java`` e no mesmo executar **Run JUnit Test**.
+2. Para apenas teste de inicialização de contexto SpringBoot, em caminho ``src/test/java`` localizar pacote ``com.techgroup.techmanage``, e neste localizar classe ``TechmanageApplicationTests.java`` e executar um **Run JUnit Test** nesta.
+3. Para apenas testes de integração, em caminho ``src/test/java`` localizar pacote ``com.techgroup.techmanage.controller``, e neste localizar classe ``UserControllerTest.java`` e executar um **Run JUnit Test** nesta.
+4. Para apenas testes unitários, em caminho ``src/test/java`` localizar pacote ``com.techgroup.techmanage.service``, e neste localizar classe ``UserServiceTest.java`` e executar um **Run JUnit Test** nesta.
 
 ---   
 
